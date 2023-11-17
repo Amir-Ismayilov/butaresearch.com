@@ -1,0 +1,69 @@
+{
+  "choose_language": "Dil seçimi edin",
+  "home_page": "Ana səhifə",
+  "projects": "Layihələr",
+  "completed_projects": "Tamamlanmış layihələr",
+  "news": "Xəbərlər",
+  "latest_news": "Son xəbərlər",
+  "professional_consultation": "peşəkar konsultasiya almaq üçün müraciət edin",
+  "name": "ad",
+  "surname": "soyad",
+  "phone": "telefon",
+  "email": "E-poçt",
+  "message": "Mesaj",
+  "send": "Göndər",
+  "field_is_mandatory": "Bu xananın doldurulması məcburidir",
+  "enter_valid_data": "Düzgün e-poçt ünvanı daxil edin",
+  "message_longer_6_characters": "Mesaj 6 simvoldan uzun olmalıdır",
+  "fill_all_fields_correctly.": "Zəhmət olmasa bütün sahələri düzgün doldurun.",
+  "request_sent_successfully.": "Sorğunuz uğurla göndərildi.",
+  "error_Invalid_request": "Xəta: Yanlış sorğu.",
+  "server_error.": "Server xətası.",
+  "all_rights_reserved": "Bütün hüquqlar görünür.",
+  "other_news": "Digər paylaşımlar",
+  "download_news": "Xəbəri yükləyin:",
+  "error_404_text": "Üzr istəyirik, sorğu etdiyiniz səhifə mövcud deyil!",
+  "back_home_page": "Əsas səhifəyə qayıdın",
+  "address": "Ünvan:",
+  "Tel:": "Tel:",
+  "Fax:": "Fax:",
+  "more_details": "daha ətraflı",
+  "Detailed": "daha ətraflı",
+  "about_us": "Haqqımızda",
+  "board_of_directors": "İdarə heyəti",
+  "back_to_home": "Əsas Səhifəyə Qayıdın",
+  "contacts": "Əlaqə",
+  "our_company": "Bizim şirkət",
+  "services": "Xidmətlər",
+  "services_2": "Xidmətlərimiz",
+  "partners": "Tərəfdaşlar",
+  "blogs": "Bloq",
+  "faq": "sual-cavab",
+  "our_works": "İşlərimiz",
+  "service_dream": "Biz xəyallarınızı əlçatan edirik!",
+  "our_latest_crafts": "Son əl işlərimiz ilə tanış ola bilərsiniz",
+  "site_map": "Saytın xəritəsi",
+  "subscribe": "Abunə olun",
+  "subscribe_short_info": "Ən son xəbərləri, yenilikləri və xüsusi təklifləri əldə etmək üçün abunə olun.",
+  "email_placeholder": "E-poçt...",
+  "business_develop": "Biznesinizi bizimlə inkişaf etdirin",
+  "have_question": "Sualınız var?",
+  "other_service": "Digər xidmətlər",
+  "service_offer": "Xidmət təklifi al",
+  "other_posts": "Digər layihələr"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
