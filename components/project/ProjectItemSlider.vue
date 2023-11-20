@@ -34,7 +34,6 @@ export default {
 .card_container {
   position: relative;
   border: 1px solid #ddd;
-  box-shadow: 3px 4px 9px rgba(36, 36, 36, .15);
   border-radius: 10px;
   margin: 10px 0 80px 0;
 }

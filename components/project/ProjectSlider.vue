@@ -9,7 +9,7 @@
           </div>
         </div>
 
-        <div class="card_slider">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
           <swiper :options="swiperOptions">
             <swiper-slide class="col-6 col-sm-6 col-md-4 col-lg-2"
                           v-for="(Project, index) in projectsAll" :key="index">
@@ -77,8 +77,5 @@ export default {
 </script>
 
 <style scoped>
-.card_slider {
-  display: flex;
-  align-items: center;
-}
+
 </style>

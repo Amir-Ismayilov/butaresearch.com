@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AboutUsSlider",
@@ -73,6 +73,10 @@ export default {
 @media screen and (max-width: 992px) {
   .synced_slider {
     margin-top: 40px;
+  }
+
+  .synced_slider img {
+    height: 250px;
   }
 }
 </style>

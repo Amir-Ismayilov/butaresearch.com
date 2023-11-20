@@ -8,22 +8,24 @@
           </div>
         </div>
 
-        <swiper :options="swiperOptions">
-          <swiper-slide v-for="(partner, index) in partnersAll" :key="index" class="col-6 col-sm-6 col-md-4 col-lg-2">
-            <a :href="partner.link" target="_blank">
-              <div class="partners_image_wrapper">
-                <img :src="partner.logo" :alt="partner.text">
-              </div>
-            </a>
-          </swiper-slide>
-        </swiper>
+        <div class="col-12">
+          <swiper :options="swiperOptions">
+            <swiper-slide v-for="(partner, index) in partnersAll" :key="index" class="col-6 col-sm-6 col-md-4 col-lg-2">
+              <a :href="partner.link" target="_blank">
+                <div class="partners_image_wrapper">
+                  <img :src="partner.logo" :alt="partner.text">
+                </div>
+              </a>
+            </swiper-slide>
+          </swiper>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "PartnersSlider",
@@ -72,9 +74,6 @@ export default {
 </script>
 
 <style scoped>
-.partners_slider {
-}
-
 .swiper-slide {
   padding: 10px 0;
 }
@@ -97,6 +96,8 @@ export default {
 
 .partners_image_wrapper img {
   padding: 15px 0;
-  max-width: 125px;
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
 }
 </style>

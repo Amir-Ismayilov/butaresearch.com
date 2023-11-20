@@ -2,9 +2,11 @@
   <div class="our_services_item" v-if="ServicesStatus === 1">
     <img :src="ServicesImage" :alt="ServicesText">
     <p>
-      <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/service/` + ServicesId">{{ ServicesText }}</nuxt-link>
+      <nuxt-link :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` + `/service/` + ServicesId">{{ ServicesText
+      }}</nuxt-link>
     </p>
-    <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/service/` + ServicesId">{{ $t('Detailed') }}</nuxt-link>
+    <nuxt-link :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` + `/service/` + ServicesId">{{ $t('Detailed')
+    }}</nuxt-link>
   </div>
 </template>
 
@@ -44,8 +46,8 @@ export default {
 }
 
 .our_services_item img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
 }
 
@@ -53,5 +55,13 @@ export default {
   color: var(--light-mode-color-4);
   font-size: 22px;
   line-height: normal;
+}
+
+@media screen and (max-width: 576px) {
+  .our_services_item {
+    align-items: center;
+    gap: 20px;
+    min-height: unset;
+  }
 }
 </style>

@@ -8,29 +8,19 @@
         <swiper :options="swiperOptions">
 
           <!-- Slides loop -->
-          <swiper-slide
-            v-for="(slider, index) in slidersAll"
-            :key="index"
-            class="my_swiper">
+          <swiper-slide v-for="(slider, index) in slidersAll" :key="index" class="my_swiper">
 
             <!-- Single slide content -->
-            <div class="slider_wrapper" :style="{ 'background-image': `url(${ slider.image})` }" style="background-position: center ">
+            <div class="slider_wrapper" :style="{ 'background-image': `url(${slider.image})` }"
+              style="background-position: center ">
 
               <!-- Slider main info -->
               <div class="slider_main_info">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                      <h2>{{ slider.title }}</h2>
-                      <span v-html="slider.description"></span>
-                      <br>
-                      <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+ slider.link">{{
-                          $t('more_details')
-                        }}
-                      </nuxt-link>
-                    </div>
-                  </div>
-                </div>
+                <h2>{{ slider.title }}</h2>
+                <span v-html="slider.description"></span>
+                <br>
+                <nuxt-link :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` + slider.link">{{ $t('more_details') }}</nuxt-link>
+                <nuxt-link :to="localePath('contacts')">{{ $t('contacts') }}</nuxt-link>
               </div>
 
             </div>
@@ -48,7 +38,7 @@
 
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "IndexSlider",
@@ -81,7 +71,7 @@ export default {
 
 <style scoped>
 .slider_wrapper {
-  height: calc(100vh - 50px);
+  height: calc(100vh - 100px);
   position: relative;
   background-size: cover;
 }
@@ -90,24 +80,25 @@ export default {
   position: absolute;
   left: 75px;
   bottom: 50%;
-  transform: translate(0%, 50%);
+  transform: translate(0%, 52%);
 }
 
 .slider_main_info h2 {
-  font-size: 70px;
+  font-size: 60px;
   color: #ffffff;
   font-weight: 700;
   max-width: 780px;
-  filter: drop-shadow(2px 4px 6px black);;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .slider_main_info span {
   color: var(--light-mode-font-color-white);
   display: block;
   margin: 10px 0;
-  font-size: 21px;
-  font-weight: 700;
-  filter: drop-shadow(2px 4px 6px black);;
+  font-size: 17px;
+  font-weight: 400;
+  filter: drop-shadow(2px 4px 6px black);
+  ;
 }
 
 .slider_main_info a {
@@ -115,8 +106,13 @@ export default {
   padding: 10px 15px;
   color: #ffffff !important;
   background-color: var(--light-mode-color-1);
-  border-radius: 5px;
+  border-radius: 50px;
   filter: drop-shadow(2px 4px 6px black);
+}
+
+.slider_main_info a:last-child {
+  background-color: #ffc221;
+  margin-left: 10px;
 }
 
 .my_swiper img {
@@ -129,6 +125,7 @@ export default {
   opacity: 0;
 }
 
+
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -137,7 +134,7 @@ export default {
 
 @media screen and (max-width: 768px) {
   .slider_main_info h2 {
-    font-size: 38px;
+    font-size: 35px;
     font-weight: 600;
   }
 
@@ -146,4 +143,18 @@ export default {
     font-weight: 600;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .slider_main_info {
+    left: 12px;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    display: none !important;
+  }
+}
+
+
+
+  
 </style>

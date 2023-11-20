@@ -286,7 +286,7 @@ export default {
 }
 
 .top_header_contact_info a:last-child {
-  padding-left: 5px;
+  padding-left: 9px;
 }
 
 .site_config {
@@ -404,7 +404,7 @@ export default {
 }
 
 .logo_main_wrapper img {
-  height: 70px;
+  height: 65px;
   object-fit: contain;
 }
 
@@ -627,7 +627,7 @@ export default {
   }
 
   .site_config {
-    margin-top: 20px;
+    margin-top: 12px;
     justify-content: center;
   }
 }
