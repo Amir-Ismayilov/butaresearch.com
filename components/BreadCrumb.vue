@@ -36,10 +36,14 @@ export default {
 
 <style scoped>
 #common_banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  padding: 10px 0;
   background-image: url(../assets/images/background/breadcrumb.jpg);
   background-size: cover;
   background-repeat: repeat;
-  padding: 50px 0;
 }
 
 .common_banner_text {
@@ -51,11 +55,10 @@ export default {
 
 .common_banner_text h1 {
   font-size: 45px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 12px;
   color: #fff;
   text-align: center;
-  filter: drop-shadow(2px 4px 6px black);
 }
 
 .breadcrumb {
@@ -65,21 +68,21 @@ export default {
   list-style: none;
 }
 
-.breadcrumb .active {
-  filter: drop-shadow(2px 3px 5px black);
-}
-
 .breadcrumb .divider::before {
   content: "/";
   margin: 0 0.3rem;
   color: #999;
 }
 
-.breadcrumb-item, .breadcrumb-item a {
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #fff;
+}
+
+.breadcrumb-item,
+.breadcrumb-item a {
   font-size: 18px;
   display: inline-block;
   color: #fff;
   font-weight: 400;
-  filter: drop-shadow(1px 2px 2px #252525);
 }
 </style>

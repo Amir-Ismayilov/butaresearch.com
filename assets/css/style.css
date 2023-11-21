@@ -168,6 +168,33 @@ dt {
 }
 
 
+.buta_animation_wrapper {
+  position: absolute;
+  z-index: -1;
+  top: 50px;
+  left: 50%;
+  left: calc(50% - 75px);
+  width: 150px;
+  height: 150px;
+  animation: round 30s infinite;
+}
+
+.buta_animation_wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .Vue-Toastification__container .Vue-Toastification__toast {
     margin-bottom: 0;
@@ -178,7 +205,8 @@ dt {
     padding: 40px 0;
   }
 
-  .swiper-button-prev, .swiper-button-next {
+  .swiper-button-prev,
+  .swiper-button-next {
     display: none !important;
   }
 
@@ -186,4 +214,7 @@ dt {
     height: 250px !important;
   }
 
+  #common_banner {
+    background-position: center;
+  }
 }
