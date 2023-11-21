@@ -38,7 +38,7 @@ export default {
           iconUrl: myIconPath,
           iconSize: [80, 80],
           iconAnchor: [25, 25],
-          popupAnchor: [15, -30]
+          popupAnchor: [17, -27]
         });
 
         L.marker([this.latitude, this.longitude], {icon: customIcon})

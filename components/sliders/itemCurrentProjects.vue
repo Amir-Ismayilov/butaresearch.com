@@ -1,14 +1,14 @@
 <template>
-  <div class="card_container">
+  <figure class="card_container">
     <div class="card_container_image">
       <img :src="ProjectsImage" :alt="ProjectsTitle">
     </div>
 
-    <div class="card_container_content">
+    <figcaption class="card_container_content">
       <h4>{{ ProjectsTitle }}</h4>
       <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/current-projects/` + ProjectsId">{{ $t('Detailed') }}</nuxt-link>
-    </div>
-  </div>
+    </figcaption>
+  </figure>
 </template>
 
 <script>

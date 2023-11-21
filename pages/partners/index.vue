@@ -66,7 +66,7 @@ export default {
   border: 1px solid #ffffff;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
   transition: all 0.5s;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .partners_wrapper:hover {

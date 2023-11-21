@@ -91,4 +91,10 @@ export default {
 .map_wrapper {
   margin: 50px 0;
 }
+
+@media only screen and (max-width: 992px) {
+  .login-box {
+    margin-top: 40px;
+  }
+}
 </style>

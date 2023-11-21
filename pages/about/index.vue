@@ -26,7 +26,6 @@
           <div class="col-12 col-sm-12 col-md-12 col-lg-12">
             <div class="our_services">
               <h1>{{ $t('services') }}</h1>
-              <div class="container">
                 <div class="row">
                   <div class="col-12 col-sm-6 col-md-6 col-lg-4" v-for="(service,index) in servicesAll" :key="index">
                     <OurServicesItem
@@ -37,7 +36,6 @@
                     />
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>

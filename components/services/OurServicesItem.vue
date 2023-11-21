@@ -1,13 +1,13 @@
 <template>
-  <div class="our_services_item" v-if="ServicesStatus === 1">
+  <figure class="our_services_item" v-if="ServicesStatus === 1">
     <img :src="ServicesImage" :alt="ServicesText">
-    <p>
+    <figcaption>
       <nuxt-link :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` + `/service/` + ServicesId">{{ ServicesText
       }}</nuxt-link>
-    </p>
+    </figcaption>
     <nuxt-link :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` + `/service/` + ServicesId">{{ $t('Detailed')
     }}</nuxt-link>
-  </div>
+  </figure>
 </template>
 
 <script>
@@ -33,11 +33,12 @@ export default {
   border: 1px solid #DDDDDD;
   box-shadow: 3px 4px 9px rgba(36, 36, 36, 0.15);
   transition: 0.5s;
-  min-height: 250px;
+  min-height: 220px;
   border-bottom: 3px solid var(--light-mode-color-1);
 }
 
 .our_services_item a {
+  font-weight: 600;
   text-transform: capitalize;
 }
 
@@ -54,6 +55,7 @@ export default {
 .our_services_item a:first-child {
   color: var(--light-mode-color-4);
   font-size: 22px;
+  font-weight: 600;
   line-height: normal;
 }
 

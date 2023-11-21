@@ -1,5 +1,5 @@
 <template>
-  <div class="blogs_wrapper">
+  <figure class="blogs_wrapper">
     <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/blog/` + blogsId">
       <div class="blogs_publish_date">
         <span>{{ blogsPublishDate ? blogsPublishDate : "0000-00-00" }}</span>
@@ -9,11 +9,11 @@
         <img :src="blogsImage" :alt="blogsId">
       </div>
 
-      <div class="blogs_description_container">
+      <figcaption class="blogs_description_container">
         <p v-html="blogsDescription"></p>
-      </div>
+      </figcaption>
     </nuxt-link>
-  </div>
+  </figure>
 </template>
 
 <script>
@@ -36,13 +36,10 @@ export default {
   flex-direction: column;
   text-align: center;
   align-items: center;
-  height: 350px;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   background-color: rgba(220, 220, 220, 0.7);
   transition: 0.5s;
-  color: var(--dark-font-color);
   box-shadow: 3px 4px 9px rgba(36, 36, 36, .15);
-  cursor: pointer;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -53,7 +50,7 @@ export default {
 
 .blogs_image_container {
   width: 100%;
-  height: 300px;
+  height: 260px;
   overflow: hidden;
 }
 
@@ -69,18 +66,18 @@ export default {
 }
 
 .blogs_description_container {
-  padding-top: 15px;
+  padding: 10px 0;
   color: var(--dark-font-color);
-  width: 85%;
+  width: 90%;
 }
 
 .blogs_description_container p {
-  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   color: black;
-  display: block;
   white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .blogs_publish_date {

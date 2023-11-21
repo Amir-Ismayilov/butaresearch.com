@@ -43,7 +43,7 @@
             <div class="projects_inside_right">
               <div class="other_post_container">
                 <span>{{ $t('other_service') }}</span>
-                <article class="project_item" v-for="(service,index) in servicesAll.slice(-5)" :key="index">
+                <article class="project_item" v-for="(service,index) in servicesAll" :key="index">
                   <div class="project_item_image_wrapper">
                     <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/service/` + service.id">
                       <img :src="service.image" :alt="service.name">
@@ -208,7 +208,7 @@ export default {
   font-size: 20px;
   color: var(--light-mode-color-4);
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .project_item {
@@ -255,6 +255,13 @@ export default {
   position: sticky;
   top: 100px;
 }
+
+.login-box {
+  padding: 0 12px;
+}
+
+
+
 
 @media screen and (max-width: 992px) {
   .other_post_container {

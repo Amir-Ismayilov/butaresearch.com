@@ -54,6 +54,7 @@ export default {
   font-weight: 500;
   margin-bottom: 12px;
   color: #fff;
+  text-align: center;
   filter: drop-shadow(2px 4px 6px black);
 }
 

@@ -20,7 +20,7 @@
                 </ul>
               </div>
 
-              <LanguageSwitcher/>
+              <LanguageSwitcher />
             </div>
           </div>
         </div>
@@ -70,9 +70,10 @@
                           <nuxt-link :to="localePath('service')">{{ $t('services') }}</nuxt-link>
                           <div class="dropdown">
                             <ul>
-                              <li v-if="service.status === 1" v-for="(service,index) in servicesAll" :key="index">
-                                <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/service/` + service.id"
-                                >{{ service.name }}
+                              <li v-if="service.status === 1" v-for="(service, index) in servicesAll" :key="index">
+                                <nuxt-link
+                                  :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` + `/service/` + service.id">{{
+                                    service.name }}
                                 </nuxt-link>
                               </li>
                             </ul>
@@ -150,10 +151,14 @@
                             </a>
                             <div class="dropdown" v-if="isMenuOpen">
                               <ul>
-                                <li v-if="service.status === 1" v-for="(service,index) in servicesAll" :key="index">
+                                <li>
+                                  <nuxt-link :to="localePath('service')">{{ $t('services_all') }}</nuxt-link>
+                                </li>
+
+                                <li v-if="service.status === 1" v-for="(service, index) in servicesAll" :key="index">
                                   <nuxt-link
-                                    :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/service/` + service.id"
-                                  >{{ service.name }}
+                                    :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` + `/service/` + service.id">{{
+                                      service.name }}
                                   </nuxt-link>
                                 </li>
                               </ul>
@@ -179,7 +184,7 @@
                       </li>
 
                       <li>
-                          <LanguageSwitcher/>
+                        <LanguageSwitcher />
                       </li>
                     </ul>
                   </div>
@@ -194,7 +199,7 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 import LanguageSwitcher from '../../components/LanguageSwitcher.vue';
 
 export default {
@@ -415,7 +420,7 @@ export default {
   align-items: center;
 }
 
-.header_main_list nav > ul {
+.header_main_list nav>ul {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
@@ -442,7 +447,7 @@ export default {
   width: 100%;
 }
 
-.header_main_list nav > ul .header_main_item a {
+.header_main_list nav>ul .header_main_item a {
   display: block;
   font-size: 15px;
   text-transform: capitalize;
@@ -544,7 +549,7 @@ export default {
   text-align: center;
 }
 
-.menu_phone > ul > li {
+.menu_phone>ul>li {
   margin: 6px 0;
 }
 
@@ -552,11 +557,13 @@ export default {
   margin-bottom: 20px;
 }
 
-.slide-enter-active, .slide-leave-active {
+.slide-enter-active,
+.slide-leave-active {
   transition: all .3s ease;
 }
 
-.slide-enter, .slide-leave-to {
+.slide-enter,
+.slide-leave-to {
   transform: translateX(-100%);
 }
 
@@ -588,7 +595,8 @@ export default {
     border-bottom: unset;
   }
 
-  .header_main_contact, .header_main_list {
+  .header_main_contact,
+  .header_main_list {
     display: none;
   }
 

@@ -62,7 +62,16 @@
               <p>{{ $t('subscribe_short_info') }}</p>
               <div class="subscribe-area">
                 <form class="form-subscribe">
-                  <input autofocus="false" class="input-subscribe" :placeholder="$t('email_placeholder')" type="text">
+
+                  <input v-model="email" type="email" id="email" class="input-subscribe" name="email" required=""
+                    @blur="$v.email.$touch()" :placeholder="$t('email_placeholder')">
+                  <!-- Error email -->
+                  <span v-if="$v.email.$error" class="error-text-2">
+                    <span v-if="!$v.email.required">* {{ $t('field_is_mandatory') }}</span>
+                    <span v-else-if="!$v.email.email">* {{ $t('enter_valid_data') }}</span>
+                  </span>
+
+
                   <button>
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
                   </button>
@@ -87,13 +96,20 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { email, required } from "vuelidate/lib/validators";
+
+import { mapGetters } from "vuex";
 
 export default {
   name: "mainFooter",
+  validations: {
+    email: { required, email },
+  },
   data() {
     return {
       AddUrl: process.env.ASSET_URL,
+      email: "",
+      submitted: false
     }
   },
   computed: {
@@ -101,6 +117,36 @@ export default {
       settingAll: "module/setting/getAllSettings",
       blogsAll: "module/blog/getAllBlogs"
     }),
+  },
+
+
+
+  methods: {
+    handleSubmit() {
+      this.$v.$touch();
+
+      if (this.$v.$invalid) {
+        this.$toast.error(this.$t('fill_all_fields_correctly.'));
+        return;
+      }
+
+      this.$axios.$post('/email', {
+        email: this.user.email,
+      })
+        .then((response) => {
+            email: "",
+          // document.getElementById("contact_form").reset();
+          this.$v.$reset();
+          this.$toast.success(this.$t('request_sent_successfully.'));
+        })
+        .catch((err) => {
+          if (err.response.status === 400) {
+            this.$toast.error(this.$t('error_Invalid_request.'));
+          } else if (err.response.status === 500) {
+            this.$toast.error(this.$t('server_error.'));
+          }
+        });
+    }
   },
 }
 </script>
@@ -164,8 +210,8 @@ export default {
 }
 
 .footer_list_wrapper li a img {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   background: #ffffff;
 }
@@ -244,9 +290,9 @@ export default {
   }
 
   .footer_list_wrapper {
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: flex-start
+    align-items: flex-start;
+    justify-content: unset;
+    margin-bottom: 15px;
   }
 }
 </style>

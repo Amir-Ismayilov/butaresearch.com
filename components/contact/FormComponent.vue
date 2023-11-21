@@ -1,69 +1,63 @@
 <template>
   <div class="login-box">
     <form @submit.prevent="handleSubmit" id="contact_form">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="user-box">
-              <input type="text" v-model="user.name" id="name" name="name" required=""
-                     @blur="$v.user.name.$touch()">
-              <label>{{ $t('name') }}</label>
-              <!-- Error name -->
-              <span v-if="$v.user.name.$error" class="error-text">* {{ $t('field_is_mandatory') }}</span>
-            </div>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="user-box">
+            <input type="text" v-model="user.name" id="name" name="name" required="" @blur="$v.user.name.$touch()">
+            <label>{{ $t('name') }}</label>
+            <!-- Error name -->
+            <span v-if="$v.user.name.$error" class="error-text">* {{ $t('field_is_mandatory') }}</span>
           </div>
+        </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="user-box">
-              <input type="text" v-model="user.surname" id="surname" name="surname" required=""
-                     @blur="$v.user.surname.$touch()">
-              <label>{{ $t('surname') }}</label>
-              <!-- Error surname -->
-              <span v-if="$v.user.surname.$error"
-                    class="error-text">* {{ $t('field_is_mandatory') }}</span>
-            </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="user-box">
+            <input type="text" v-model="user.surname" id="surname" name="surname" required=""
+              @blur="$v.user.surname.$touch()">
+            <label>{{ $t('surname') }}</label>
+            <!-- Error surname -->
+            <span v-if="$v.user.surname.$error" class="error-text">* {{ $t('field_is_mandatory') }}</span>
           </div>
+        </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="user-box">
-              <input type="tel" v-model="user.telephone" id="telephone" name="telephone" required=""
-                     @blur="$v.user.telephone.$touch()">
-              <label>{{ $t('phone') }}</label>
-              <!-- Error phone -->
-              <span v-if="$v.user.telephone.$error"
-                    class="error-text">* {{ $t('field_is_mandatory') }}</span>
-            </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="user-box">
+            <input type="tel" v-model="user.telephone" id="telephone" name="telephone" required=""
+              @blur="$v.user.telephone.$touch()">
+            <label>{{ $t('phone') }}</label>
+            <!-- Error phone -->
+            <span v-if="$v.user.telephone.$error" class="error-text">* {{ $t('field_is_mandatory') }}</span>
           </div>
+        </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="user-box">
-              <input type="email" v-model="user.email" id="email" name="email" required=""
-                     @blur="$v.user.email.$touch()">
-              <label>{{ $t('email') }}</label>
-              <!-- Error email -->
-              <span v-if="$v.user.email.$error" class="error-text">
-                          <span v-if="!$v.user.email.required">* {{ $t('field_is_mandatory') }}</span>
-                          <span v-else-if="!$v.user.email.email">* {{ $t('enter_valid_data') }}</span>
-                        </span>
-            </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="user-box">
+            <input type="email" v-model="user.email" id="email" name="email" required="" @blur="$v.user.email.$touch()">
+            <label>{{ $t('email') }}</label>
+            <!-- Error email -->
+            <span v-if="$v.user.email.$error" class="error-text">
+              <span v-if="!$v.user.email.required">* {{ $t('field_is_mandatory') }}</span>
+              <span v-else-if="!$v.user.email.email">* {{ $t('enter_valid_data') }}</span>
+            </span>
           </div>
+        </div>
 
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="user-box">
-              <input type="text" v-model="user.message" id="message" name="message" required=""
-                     @blur="$v.user.message.$touch()">
-              <label>{{ $t('message') }}</label>
-              <!-- Error message -->
-              <span v-if="$v.user.message.$error" class="error-text">
-                          <span v-if="!$v.user.message.required">* {{ $t('field_is_mandatory') }}</span>
-                          <span v-else-if="!$v.user.message.minLength">* {{ $t('message_longer_6_characters') }}</span>
-                        </span>
-            </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="user-box">
+            <input type="text" v-model="user.message" id="message" name="message" required=""
+              @blur="$v.user.message.$touch()">
+            <label>{{ $t('message') }}</label>
+            <!-- Error message -->
+            <span v-if="$v.user.message.$error" class="error-text">
+              <span v-if="!$v.user.message.required">* {{ $t('field_is_mandatory') }}</span>
+              <span v-else-if="!$v.user.message.minLength">* {{ $t('message_longer_6_characters') }}</span>
+            </span>
           </div>
+        </div>
 
-          <div class="col-12 btn_form_container">
-            <button class="btn btn_send">{{ $t('send') }}</button>
-          </div>
+        <div class="col-12 btn_form_container">
+          <button class="btn btn_send">{{ $t('send') }}</button>
         </div>
       </div>
     </form>
@@ -71,18 +65,18 @@
 </template>
 
 <script>
-import {email, minLength, required} from "vuelidate/lib/validators";
-import {mapGetters} from "vuex";
+import { email, minLength, required } from "vuelidate/lib/validators";
+import { mapGetters } from "vuex";
 
 export default {
   name: "FormComponent",
   validations: {
     user: {
-      name: {required},
-      surname: {required},
-      telephone: {required},
-      email: {required, email},
-      message: {required, minLength: minLength(6)},
+      name: { required },
+      surname: { required },
+      telephone: { required },
+      email: { required, email },
+      message: { required, minLength: minLength(6) },
     }
   },
   data() {
@@ -136,7 +130,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({contactsAll: "module/contacts/getAllContacts"}),
+    ...mapGetters({ contactsAll: "module/contacts/getAllContacts" }),
   },
 }
 </script>
@@ -178,8 +172,8 @@ export default {
   transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
   top: -20px;
   left: 0;
   color: var(--light-mode-color-4);
@@ -205,9 +199,9 @@ export default {
   color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px #03e9f4,
-  0 0 25px #03e9f4,
-  0 0 50px #03e9f4,
-  0 0 100px #03e9f4;
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
 }
 
 .login-box a span {
@@ -228,7 +222,9 @@ export default {
   0% {
     left: -100%;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -247,7 +243,9 @@ export default {
   0% {
     top: -100%;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -266,7 +264,9 @@ export default {
   0% {
     right: -100%;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -285,7 +285,9 @@ export default {
   0% {
     bottom: -100%;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     bottom: 100%;
   }
 }
@@ -308,12 +310,6 @@ export default {
   background-color: transparent;
 }
 
-.error-text {
-  display: block;
-  font-size: 12px;
-  color: var(--red-font-color);
-  margin-bottom: 20px;
-}
 
 @media only screen and (max-width: 768px) {
   .btn_send {

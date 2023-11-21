@@ -118,6 +118,9 @@ export default {
       }
     }
   },
+  mounted() {
+    console.log(this.getProjects)
+  },
   head() {
     return {
       title: this.getProjects.meta_title,

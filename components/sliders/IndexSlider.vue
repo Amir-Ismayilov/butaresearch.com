@@ -71,7 +71,7 @@ export default {
 
 <style scoped>
 .slider_wrapper {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 115px);
   position: relative;
   background-size: cover;
 }
@@ -146,11 +146,8 @@ export default {
 
 @media screen and (max-width: 576px) {
   .slider_main_info {
+    bottom: calc(50% + 25px);
     left: 12px;
-  }
-
-  .swiper-button-prev, .swiper-button-next {
-    display: none !important;
   }
 }
 
