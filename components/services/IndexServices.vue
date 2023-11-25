@@ -1,9 +1,5 @@
 <template>
   <div class="services_index_info page_part">
-    <div class="buta_animation_wrapper">
-      <img src="../../assets/icons/main/place_point.png" alt="buta_icon">
-    </div>
-
     <div class="container">
       <div class="row">
         <div class="col-12">

@@ -51,7 +51,7 @@
                   <div class="project_item_text_wrapper">
                     <nuxt-link :to="`/${$i18n.locale!='az' ? $i18n.locale : '/' }`+`/project/` +  project.id">
                       <p>{{ project.title }}</p>
-                      <span>{{ getProjects.date }}</span>
+                      <span>{{ project.current_date }}</span>
                     </nuxt-link>
                   </div>
                 </article>

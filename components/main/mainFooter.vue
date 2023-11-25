@@ -61,7 +61,7 @@
               <h1>{{ $t('subscribe') }}</h1>
               <p>{{ $t('subscribe_short_info') }}</p>
               <div class="subscribe-area">
-                <form class="form-subscribe">
+                <form class="form-subscribe" @submit.prevent="subscribeSubmit">
 
                   <input v-model="email" type="email" id="email" class="input-subscribe" name="email" required=""
                     @blur="$v.email.$touch()" :placeholder="$t('email_placeholder')">
@@ -72,7 +72,7 @@
                   </span>
 
 
-                  <button>
+                  <button type="submit">
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
                   </button>
                 </form>
@@ -122,7 +122,7 @@ export default {
 
 
   methods: {
-    handleSubmit() {
+    subscribeSubmit() {
       this.$v.$touch();
 
       if (this.$v.$invalid) {
@@ -130,12 +130,11 @@ export default {
         return;
       }
 
-      this.$axios.$post('/email', {
-        email: this.user.email,
+      this.$axios.$post('/subscribe', {
+        email: this.email,
       })
         .then((response) => {
-            email: "",
-          // document.getElementById("contact_form").reset();
+          this.email = "",
           this.$v.$reset();
           this.$toast.success(this.$t('request_sent_successfully.'));
         })

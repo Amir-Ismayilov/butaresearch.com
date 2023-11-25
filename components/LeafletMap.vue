@@ -1,5 +1,5 @@
 <template>
-  <div :id="'map-' + _uid" style="height: 450px; width: 100%; border-radius: 15px; border: 1px solid #ddd;box-shadow: 3px 4px 9px rgba(36,36,36,.15);"></div>
+  <div :id="'map-' + _uid" style="height: 350px; width: 100%; border-radius: 15px; border: 1px solid #ddd;box-shadow: 3px 4px 9px rgba(36,36,36,.15);"></div>
 </template>
 
 <script>

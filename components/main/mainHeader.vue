@@ -326,6 +326,7 @@ export default {
 }
 
 .menu-link {
+  padding: 2px 0;
   font-size: 14px;
   text-transform: capitalize;
   cursor: pointer;

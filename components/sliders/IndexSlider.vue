@@ -80,6 +80,7 @@ export default {
   position: absolute;
   left: 75px;
   bottom: 50%;
+  width: 80%;
   transform: translate(0%, 52%);
 }
 
@@ -139,7 +140,7 @@ export default {
   }
 
   .slider_main_info span {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
   }
 }
@@ -148,6 +149,7 @@ export default {
   .slider_main_info {
     bottom: calc(50% + 25px);
     left: 12px;
+    width: calc(100% - 24px);
   }
 }
 

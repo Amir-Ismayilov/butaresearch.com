@@ -27,9 +27,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
+  padding: 20px;
   border-radius: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   border: 1px solid #DDDDDD;
   box-shadow: 3px 4px 9px rgba(36, 36, 36, 0.15);
   transition: 0.5s;
