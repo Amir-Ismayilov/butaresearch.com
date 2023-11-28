@@ -170,6 +170,7 @@ export default {
   color: var(--light-mode-color-4);
   pointer-events: none;
   transition: .5s;
+  text-transform: capitalize;
 }
 
 .login-box .user-box input:focus~label,

@@ -1,6 +1,6 @@
 <template>
   <div class="preloader" v-if="loading">
-    <img :src="settingsAll.contact[0].main_logo" alt="Preloader"/>
+    <img :src="settingsAll.contact[0].loader_logo" alt="Preloader"/>
   </div>
 </template>
 
@@ -45,7 +45,7 @@ export default {
 }
 
 img {
-  max-width: 200px;
+  max-width: 150px;
   animation: spin 2s linear infinite;
 }
 

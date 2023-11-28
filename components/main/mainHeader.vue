@@ -34,6 +34,8 @@
             <div class="logo_main_wrapper">
               <nuxt-link :to="localePath('index')">
                 <img :src="settingAll.contact[0].main_logo" alt="main_logo">
+
+                <h3>Buta <br> Research</h3>
               </nuxt-link>
             </div>
 
@@ -326,8 +328,7 @@ export default {
 }
 
 .menu-link {
-  padding: 2px 0;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: capitalize;
   cursor: pointer;
   text-decoration: none;
@@ -389,7 +390,7 @@ export default {
 }
 
 .main_header {
-  padding: 5px 0;
+  padding: 6px 0;
   background: var(--light-mode-color-3);
   transition: top 0.8s ease;
 }
@@ -410,8 +411,9 @@ export default {
 }
 
 .logo_main_wrapper img {
-  height: 65px;
+  height: 75px;
   object-fit: contain;
+  filter: drop-shadow(2px 2px 3px black);
 }
 
 .logo_main_wrapper a {
@@ -637,7 +639,7 @@ export default {
 
   .site_config {
     margin-top: 12px;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 }
 </style>

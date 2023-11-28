@@ -70,10 +70,10 @@ export default {
     return {
       page: 1,
       itemsPerPage: 8,
-      title: 'Our works',
-      TitlePage: 'İşlərimiz',
-      LinkBefore: 'Ana-sehife',
-      LinkAfter: 'İşlərimiz',
+      title: this.$t('our_works'),
+      TitlePage: this.$t('our_works'),
+      LinkBefore: this.$t('home_page'),
+      LinkAfter: this.$t('our_works'),
     };
   },
   computed: {

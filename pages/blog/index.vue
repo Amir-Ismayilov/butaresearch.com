@@ -70,10 +70,10 @@ export default {
       page: 1,
       itemsPerPage: 6,
 
-      title: "Blogs",
-      TitlePage: "Blogs",
-      LinkBefore: "Ana-sehife",
-      LinkAfter: "Blogs",
+      title:  this.$t('blogs'),
+      TitlePage: this.$t('blogs'),
+      LinkBefore: this.$t('home_page'),
+      LinkAfter:  this.$t('blogs'),
     };
   },
   computed: {
@@ -94,9 +94,6 @@ export default {
       const end = Math.min(this.page + 2, this.totalPages);
       return Array.from({ length: end - start + 1 }, (_, i) => start + i);
     },
-  },
-  mounted() {
-    console.log(this.blogsAll);
   },
   methods: {
     changePage(newPage) {

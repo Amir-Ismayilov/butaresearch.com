@@ -78,7 +78,7 @@ export default {
   data() {
     return {
       AddUrl: process.env.ASSET_URL,
-      LinkBefore: 'Ana-sehife',
+      LinkBefore: this.$t('home_page'),
 
       swiperOptions: {
         loop: true,
@@ -117,9 +117,6 @@ export default {
         },
       }
     }
-  },
-  mounted() {
-    console.log(this.getProjects)
   },
   head() {
     return {

@@ -57,10 +57,10 @@ export default {
   },
   data() {
     return {
-      title: 'Əlaqə',
-      TitlePage: 'Əlaqə',
-      LinkBefore: 'Ana-sehife',
-      LinkAfter: 'Əlaqə',
+      title: this.$t('contacts'),
+      TitlePage: this.$t('contacts'),
+      LinkBefore: this.$t('home_page'),
+      LinkAfter: this.$t('contacts'),
     }
   },
   computed: {

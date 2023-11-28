@@ -1,6 +1,8 @@
 <template>
   <section class="section_services_container">
-    <BreadCrumb :BreadCrumbTitle="TitlePage" :BreadCrumbBefore="LinkBefore" :BreadCrumbAfter="LinkAfter" />
+    <BreadCrumb :BreadCrumbTitle="TitlePage"
+                :BreadCrumbBefore="LinkBefore"
+                :BreadCrumbAfter="LinkAfter" />
 
     <div class="main_page_body">
       <div class="container">
@@ -39,10 +41,10 @@ export default {
   },
   data() {
     return {
-      title: 'Services',
-      TitlePage: 'Services',
-      LinkBefore: 'Home',
-      LinkAfter: 'Services',
+      title: this.$t('services'),
+      TitlePage: this.$t('services'),
+      LinkBefore: this.$t('home_page'),
+      LinkAfter: this.$t('services'),
     }
   },
   computed: {

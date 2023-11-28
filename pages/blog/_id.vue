@@ -1,7 +1,9 @@
 <template>
   <!-- Blogs Inside -->
   <section class="blogs_inside">
-    <BreadCrumb :BreadCrumbTitle="getBlogs.title" :BreadCrumbBefore="LinkBefore" :BreadCrumbAfter="getBlogs.title" />
+    <BreadCrumb :BreadCrumbTitle="getBlogs.title"
+                :BreadCrumbBefore="LinkBefore" 
+                :BreadCrumbAfter="getBlogs.title" />
 
     <div class="main_page_body">
       <div class="container">
@@ -82,7 +84,7 @@ export default {
       AddUrl: process.env.ASSET_URL,
       current_index: 0,
       hideFooter: false,
-      LinkBefore: 'Ana-sehife',
+      LinkBefore: this.$t('home_page'),
       swiperOptions: {
         loop: true,
         navigation: {

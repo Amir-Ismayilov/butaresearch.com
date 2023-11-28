@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      title: 'Ana səhifə',
+      title: this.$t("home_page"),
     }
   },
   computed: {

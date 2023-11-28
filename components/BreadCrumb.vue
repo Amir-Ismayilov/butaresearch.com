@@ -54,11 +54,13 @@ export default {
 }
 
 .common_banner_text h1 {
-  font-size: 45px;
+  font-size: 36px;
   font-weight: 600;
   margin-bottom: 12px;
+  letter-spacing: 3px;
   color: #fff;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .breadcrumb {
@@ -80,9 +82,10 @@ export default {
 
 .breadcrumb-item,
 .breadcrumb-item a {
-  font-size: 18px;
+  font-size: 15px;
   display: inline-block;
   color: #fff;
   font-weight: 400;
+  text-transform: uppercase;
 }
 </style>

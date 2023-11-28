@@ -56,9 +56,6 @@ export default {
       aboutAll: "module/about/getAllAbouts"
     })
   },
-  mounted() {
-    console.log(this.aboutAll)
-  }
 }
 </script>
 

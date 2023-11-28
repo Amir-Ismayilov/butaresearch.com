@@ -40,10 +40,10 @@ export default {
   },
   data() {
     return {
-      title: 'Partners',
-      TitlePage: 'Partners',
-      LinkBefore: 'Ana-sehife',
-      LinkAfter: 'Partners',
+      title: this.$t('partners'),
+      TitlePage: this.$t('partners'),
+      LinkBefore: this.$t('home_page'),
+      LinkAfter: this.$t('partners'),
     };
   },
   computed: {

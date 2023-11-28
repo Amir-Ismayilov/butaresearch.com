@@ -61,10 +61,10 @@ export default {
   },
   data() {
     return {
-      title: 'About us',
-      TitlePage: 'About us',
-      LinkBefore: 'Ana-sehife',
-      LinkAfter: 'About us',
+      title: this.$t('about_us'),
+      TitlePage: this.$t('about_us'),
+      LinkBefore: this.$t('home_page'),
+      LinkAfter: this.$t('about_us'),
     }
   },
   computed: {
@@ -72,9 +72,6 @@ export default {
       aboutAll: "module/about/getAllAbouts",
       servicesAll: "module/service/getAllServices"
     }),
-  },
-  mounted() {
-    console.log(this.aboutAll)
   },
   head() {
     return {

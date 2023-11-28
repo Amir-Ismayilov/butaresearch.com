@@ -83,10 +83,7 @@ export default {
   data() {
     return {
       AddUrl: process.env.ASSET_URL,
-      TitlePage: 'Service',
-      LinkBefore: 'Ana-sehife',
-      LinkAfter: 'Service',
-
+      LinkBefore: this.$t('home_page'),
 
       swiperOptions: {
         loop: true,

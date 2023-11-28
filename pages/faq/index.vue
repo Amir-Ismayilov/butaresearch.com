@@ -35,19 +35,16 @@ export default {
   },
   data() {
     return {
-      title: 'FAQ',
-      TitlePage: 'FAQ',
-      LinkBefore: 'Ana-sehife',
-      LinkAfter: 'FAQ',
+      title: this.$t('faq'),
+      TitlePage: this.$t('faq'),
+      LinkBefore: this.$t('home_page'),
+      LinkAfter: this.$t('faq'),
     }
   },
   computed: {
     ...mapGetters({
       faqsAll: "module/faq/getAllFaqs"
     }),
-  },
-  mounted() {
-    console.log(this.faqsAll)
   },
   // Page head() Title, description for SEO
   head() {

@@ -90,6 +90,7 @@ export default {
 }
 
 .content_text span {
+  text-transform: capitalize;
   color: #ffffff;
   font-weight: 600;
 }

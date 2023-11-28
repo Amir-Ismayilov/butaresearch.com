@@ -7,36 +7,61 @@
             <div class="footer_list_wrapper logo_main_wrapper">
               <nuxt-link :to="localePath('index')">
                 <div class="image_footer_wrapper">
-                  <img :src="settingAll.contact[0].footer_logo" alt="main_logo">
-                  <h3>Buta <br> Research</h3>
+                  <img
+                    :src="settingAll.contact[0].footer_logo"
+                    alt="main_logo"
+                  />
+                  <h3>
+                    Buta <br />
+                    Research
+                  </h3>
                 </div>
 
-                <div class="logo_main_wrapper_text">{{ settingAll.contact[0].short_description }}</div>
+                <div class="logo_main_wrapper_text">
+                  {{ settingAll.contact[0].short_description }}
+                </div>
               </nuxt-link>
             </div>
           </div>
 
           <div class="col-12 col-sm-6 col-md-6 col-lg-3">
             <div class="footer_list_wrapper">
-              <h1>{{ $t('site_map') }}</h1>
+              <h1>{{ $t("site_map") }}</h1>
               <ul>
                 <li>
-                  <nuxt-link :to="localePath('index')">{{ $t('home_page') }}</nuxt-link>
+                  <nuxt-link :to="localePath('index')">{{
+                    $t("home_page")
+                  }}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link :to="localePath('about')">{{ $t('about_us') }}</nuxt-link>
+                  <nuxt-link :to="localePath('about')">{{
+                    $t("about_us")
+                  }}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link :to="localePath('service')">{{ $t('services') }}</nuxt-link>
+                  <nuxt-link :to="localePath('service')">{{
+                    $t("services")
+                  }}</nuxt-link>
+                </li>
+
+                <li>
+                  <nuxt-link :to="localePath('blog')">{{
+                    $t("blogs")
+                  }}</nuxt-link>
+                </li>
+
+                <li class="header_main_item">
+                  <nuxt-link :to="localePath('project')">{{
+                    $t("our_works")
+                  }}</nuxt-link>
                 </li>
                 <li class="header_main_item">
-                  <nuxt-link :to="localePath('project')">{{ $t('our_works') }}</nuxt-link>
-                </li>
-                <li class="header_main_item">
-                  <nuxt-link :to="localePath('faq')">{{ $t('faq') }}</nuxt-link>
+                  <nuxt-link :to="localePath('faq')">{{ $t("faq") }}</nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link :to="localePath('contacts')">{{ $t('contacts') }}</nuxt-link>
+                  <nuxt-link :to="localePath('contacts')">{{
+                    $t("contacts")
+                  }}</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -44,11 +69,11 @@
 
           <div class="col-12 col-sm-6 col-md-6 col-lg-3">
             <div class="footer_list_wrapper">
-              <h1>{{ $t('blogs') }}</h1>
+              <h1>{{ $t("blogs") }}</h1>
               <ul>
                 <li v-for="blogs in blogsAll.slice(-3)" :key="blogs.id">
                   <nuxt-link :to="`/blog/` + blogs.id">
-                    <img :src="AddUrl + blogs.images[0]" :alt="blogs.title">
+                    <img :src="AddUrl + blogs.images[0]" :alt="blogs.title" />
                     {{ blogs.title }}
                   </nuxt-link>
                 </li>
@@ -58,19 +83,29 @@
 
           <div class="col-12 col-sm-6 col-md-6 col-lg-3">
             <div class="footer_list_wrapper">
-              <h1>{{ $t('subscribe') }}</h1>
-              <p>{{ $t('subscribe_short_info') }}</p>
+              <h1>{{ $t("subscribe") }}</h1>
+              <p>{{ $t("subscribe_short_info") }}</p>
               <div class="subscribe-area">
                 <form class="form-subscribe" @submit.prevent="subscribeSubmit">
-
-                  <input v-model="email" type="email" id="email" class="input-subscribe" name="email" required=""
-                    @blur="$v.email.$touch()" :placeholder="$t('email_placeholder')">
+                  <input
+                    v-model="email"
+                    type="email"
+                    id="email"
+                    class="input-subscribe"
+                    name="email"
+                    required=""
+                    @blur="$v.email.$touch()"
+                    :placeholder="$t('email_placeholder')"
+                  />
                   <!-- Error email -->
                   <span v-if="$v.email.$error" class="error-text-2">
-                    <span v-if="!$v.email.required">* {{ $t('field_is_mandatory') }}</span>
-                    <span v-else-if="!$v.email.email">* {{ $t('enter_valid_data') }}</span>
+                    <span v-if="!$v.email.required"
+                      >* {{ $t("field_is_mandatory") }}</span
+                    >
+                    <span v-else-if="!$v.email.email"
+                      >* {{ $t("enter_valid_data") }}</span
+                    >
                   </span>
-
 
                   <button type="submit">
                     <i class="fa fa-paper-plane" aria-hidden="true"></i>
@@ -87,7 +122,9 @@
       <div class="container">
         <div class="row">
           <p>
-            2023 © <a href="https://alfasoft.az/">alfasoft.az</a> | {{ $t('all_rights_reserved') }}
+            {{ current_year }} ©
+            <a href="https://alfasoft.az/">alfasoft.az</a> |
+            {{ $t("all_rights_reserved") }}
           </p>
         </div>
       </div>
@@ -109,45 +146,52 @@ export default {
     return {
       AddUrl: process.env.ASSET_URL,
       email: "",
-      submitted: false
-    }
+      submitted: false,
+      current_year: "",
+    };
   },
   computed: {
     ...mapGetters({
       settingAll: "module/setting/getAllSettings",
-      blogsAll: "module/blog/getAllBlogs"
+      blogsAll: "module/blog/getAllBlogs",
     }),
   },
 
-
+  mounted() {
+    this.getCurrentYear();
+  },
 
   methods: {
+    getCurrentYear() {
+      this.current_year = new Date().getFullYear();
+    },
+
     subscribeSubmit() {
       this.$v.$touch();
 
       if (this.$v.$invalid) {
-        this.$toast.error(this.$t('fill_all_fields_correctly.'));
+        this.$toast.error(this.$t("fill_all_fields_correctly."));
         return;
       }
 
-      this.$axios.$post('/subscribe', {
-        email: this.email,
-      })
+      this.$axios
+        .$post("/subscribe", {
+          email: this.email,
+        })
         .then((response) => {
-          this.email = "",
-          this.$v.$reset();
-          this.$toast.success(this.$t('request_sent_successfully.'));
+          (this.email = ""), this.$v.$reset();
+          this.$toast.success(this.$t("request_sent_successfully."));
         })
         .catch((err) => {
           if (err.response.status === 400) {
-            this.$toast.error(this.$t('error_Invalid_request.'));
+            this.$toast.error(this.$t("error_Invalid_request."));
           } else if (err.response.status === 500) {
-            this.$toast.error(this.$t('server_error.'));
+            this.$toast.error(this.$t("server_error."));
           }
         });
-    }
+    },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -159,6 +203,7 @@ export default {
   display: flex;
   gap: 15px;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .logo_main_wrapper img {
@@ -269,6 +314,11 @@ export default {
 
 .footer_copyright a {
   border-bottom: 1px solid #ffffff;
+}
+
+.footer_copyright a:hover {
+  color: #ffc221;
+  border-bottom: 1px solid #ffc221;
 }
 
 .footer_copyright p {
