@@ -3,14 +3,14 @@
     <div class="top_header">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-4">
+          <div class="col-12 col-md-8 col-lg-6">
             <div class="top_header_contact_info">
               <a :href="`mailto:` + settingAll.contact[0].email">{{ settingAll.contact[0].email }}</a>
               <a :href="`tel:` + settingAll.contact[0].phone">{{ settingAll.contact[0].phone }}</a>
             </div>
           </div>
 
-          <div class="col-12 col-md-6 col-lg-8">
+          <div class="col-12 col-md-4 col-lg-6">
             <div class="site_config">
               <div class="site_social_network">
                 <ul>
@@ -416,6 +416,10 @@ export default {
   filter: drop-shadow(2px 2px 3px black);
 }
 
+.logo_main_wrapper h3 {
+  margin-top: 4px;
+}
+
 .logo_main_wrapper a {
   display: flex;
   gap: 15px;
@@ -638,8 +642,24 @@ export default {
   }
 
   .site_config {
-    margin-top: 12px;
+    margin-top: 8px;
     justify-content: space-evenly;
+  }
+}
+
+
+@media screen and (max-width: 410px) {
+  .top_header_contact_info {
+    flex-direction: column;
+  }
+
+  .top_header_contact_info a[data-v-62a88d5e]:first-child {
+    border-right: unset;
+    padding-right: unset;
+  }
+
+  .top_header_contact_info a[data-v-62a88d5e]:last-child {
+    padding-left: unset;
   }
 }
 </style>

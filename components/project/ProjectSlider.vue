@@ -1,5 +1,5 @@
 <template>
-  <div class="project_sliders_area page_part">
+  <div class="project_sliders_area page_part" v-if="this.projectsAll.length > 0">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
@@ -73,6 +73,9 @@ export default {
   computed: {
     ...mapGetters({projectsAll: "module/project/getAllProjects"}),
   },
+  mounted() {
+    console.log(this.projectsAll)
+  }
 }
 </script>
 

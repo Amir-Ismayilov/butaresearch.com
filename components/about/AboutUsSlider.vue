@@ -61,7 +61,7 @@ export default {
 
 <style scoped>
 .synced_slider img {
-  height: 300px;
+  height: 320px;
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
@@ -73,7 +73,7 @@ export default {
   }
 
   .synced_slider img {
-    height: 250px;
+    height: 280px;
   }
 }
 </style>

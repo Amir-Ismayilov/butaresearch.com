@@ -230,7 +230,7 @@ export default {
 
 .footer_list_wrapper {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
   flex-direction: column;
   height: 100%;
 }

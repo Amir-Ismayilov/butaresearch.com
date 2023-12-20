@@ -22,6 +22,10 @@
               :ProjectsLink="project.link"
             />
           </div>
+
+          <h1 class="titleVisible" v-if="ProjectsAll.length == 0">
+            <h1>{{ $t("no_information") }}</h1>
+          </h1>
         </div>
 
         <div class="pagination" v-if="ProjectsAll.length > 8">
@@ -114,8 +118,8 @@ export default {
 </script>
 
 <style scoped>
-.section_completed_projects {
-
+.titleVisible {
+  text-align: center;
 }
 
 .pagination {

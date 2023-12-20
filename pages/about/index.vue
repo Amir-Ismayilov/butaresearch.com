@@ -14,6 +14,7 @@
               <h1>{{ $t('about_us') }}</h1>
               <p>{{ aboutAll.title }}</p>
               <div v-html="aboutAll.description"></div>
+              <div v-html="aboutAll.why_us"></div>
             </div>
           </div>
 

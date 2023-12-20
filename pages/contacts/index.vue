@@ -18,7 +18,7 @@
           </div>
 
           <div class="col-lg-8">
-            <FormComponent/>
+            <FormComponent class="form_component_wrapper"/>
           </div>
         </div>
       </div>
@@ -92,9 +92,18 @@ export default {
   margin: 50px 0;
 }
 
+
+
 @media only screen and (max-width: 992px) {
   .login-box {
     margin-top: 40px;
+  }
+
+  .form_component_wrapper {
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 3px 4px 9px rgba(36, 36, 36, 0.15);
   }
 }
 </style>

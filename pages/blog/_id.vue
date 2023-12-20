@@ -41,10 +41,9 @@
             </div>
           </div>
 
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12" v-if="this.limitedNews.length > 0">
             <div class="blogs_other_wrapper">
               <div class="row">
-
                 <div class="col-12">
                   <div class="title_info_wrapper">
                     <h1>{{ $t('other_news') }}</h1>
@@ -174,7 +173,7 @@ export default {
 }
 
 .blogs_inside_left .slider img {
-  height: 400px;
+  height: 350px;
   width: 100%;
   border-radius: 10px;
   object-fit: cover;

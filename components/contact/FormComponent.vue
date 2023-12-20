@@ -152,7 +152,7 @@ export default {
 .login-box .user-box input {
   width: 100%;
   padding: 10px 0;
-  font-size: 22px;
+  font-size: 17px;
   color: #000000 !important;
   margin-bottom: 40px;
   border: none;
@@ -166,7 +166,7 @@ export default {
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--light-mode-color-4);
   pointer-events: none;
   transition: .5s;

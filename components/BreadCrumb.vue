@@ -88,4 +88,15 @@ export default {
   font-weight: 400;
   text-transform: uppercase;
 }
+
+@media only screen and (max-width: 600px) {
+  .common_banner_text h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+
+  .breadcrumb-item, .breadcrumb-item a {
+    font-size: 14px;
+  }
+}
 </style>

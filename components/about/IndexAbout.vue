@@ -7,6 +7,7 @@
             <h2>{{ $t('about_us') }}</h2>
             <p class="description">{{ aboutAll.title }}</p>
             <div v-html="aboutAll.description"></div>
+            <nuxt-link :to="localePath('about')" class="btn_more_text">{{$t("more_details")}}</nuxt-link>
           </div>
         </div>
 
@@ -43,6 +44,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   height: 100%;
+}
+
+.btn_more_text {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--light-mode-color-1);
 }
 
 .about_left h2 {
