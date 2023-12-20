@@ -633,6 +633,16 @@ export default {
     display: block;
     min-width: 160px;
   }
+
+  .menu-item:hover .dropdown ul {
+    max-height: 300px;
+    overflow-y: scroll;
+    border-radius: 5px;
+  }
+
+  .menu-item:hover .dropdown {
+    border-radius: 5px;
+  }
 }
 
 
@@ -653,12 +663,12 @@ export default {
     flex-direction: column;
   }
 
-  .top_header_contact_info a[data-v-62a88d5e]:first-child {
+  .top_header_contact_info a:first-child {
     border-right: unset;
     padding-right: unset;
   }
 
-  .top_header_contact_info a[data-v-62a88d5e]:last-child {
+  .top_header_contact_info a:last-child {
     padding-left: unset;
   }
 }

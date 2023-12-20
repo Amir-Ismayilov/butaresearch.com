@@ -45,6 +45,7 @@
               <div v-for="(videoItem, index) in getServices.video" :key="index">
                 <video
                   :src="AddUrl + videoItem.download_link"
+                  title="Play"
                   width="100%"
                   loop
                   autoplay

@@ -87,8 +87,8 @@ body {
 }
 
 .swiper-pagination-bullet {
-  width: 18px !important;
-  height: 18px !important;
+  width: 12px !important;
+  height: 12px !important;
   opacity: 0.3;
 }
 
@@ -104,7 +104,7 @@ body {
 
 /*Custom scrollBar*/
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -165,6 +165,16 @@ dt {
 
 .title_info_wrapper p {
   color: #444444;
+}
+
+@media screen and (max-width: 992px) {
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--light-mode-color-4);
+  }
 }
 
 @media only screen and (max-width: 600px) {
