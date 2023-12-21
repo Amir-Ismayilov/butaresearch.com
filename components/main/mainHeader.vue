@@ -5,8 +5,17 @@
         <div class="row">
           <div class="col-12 col-md-8 col-lg-6">
             <div class="top_header_contact_info">
-              <a :href="`mailto:` + settingAll.contact[0].email">{{ settingAll.contact[0].email }}</a>
-              <a :href="`tel:` + settingAll.contact[0].phone">{{ settingAll.contact[0].phone }}</a>
+              <div class="email_group">
+                <a :href="`mailto:` + settingAll.contact[0].email">{{ settingAll.contact[0].email }}</a>
+                <br>
+                <a :href="`mailto:` + settingAll.contact[0].email_2">{{ settingAll.contact[0].email_2 }}</a>
+              </div>
+
+              <div class="phone_group">
+                <a  :href="`tel:` + settingAll.contact[0].phone">{{ settingAll.contact[0].phone }}</a>
+                <br class="number_separator">
+                <a :href="`tel:` + settingAll.contact[0].phone_2">{{ settingAll.contact[0].phone_2 }}</a>
+              </div>
             </div>
           </div>
 
@@ -50,7 +59,7 @@
                     <li class="header_main_item">
                       <ul class="menu">
                         <li class="menu-item">
-                          <a href="javascript:void(0)" class="menu-link">{{ $t('our_company') }}</a>
+                          <div class="menu-link">{{ $t('our_company') }}</div>
                           <div class="dropdown">
                             <ul>
                               <li>
@@ -124,9 +133,9 @@
                       <li class="header_main_item">
                         <ul class="menu">
                           <li class="menu-item">
-                            <a href="javascript:void(0)" class="menu-link" @click="toggleMenuMobile">
+                            <div class="menu-link" @click="toggleMenuMobile">
                               {{ $t('our_company') }}
-                            </a>
+                            </div>
                             <div class="dropdown" v-if="isMenuOpen">
                               <ul>
                                 <li>
@@ -148,9 +157,10 @@
                       <li class="header_main_item">
                         <ul class="menu">
                           <li class="menu-item">
-                            <a href="javascript:void(0)" class="menu-link" @click="toggleMenuMobile">
+                            <div class="menu-link" @click="toggleMenuMobile">
                               {{ $t('services') }}
-                            </a>
+                            </div>
+                            
                             <div class="dropdown" v-if="isMenuOpen">
                               <ul>
                                 <li>
@@ -287,13 +297,14 @@ export default {
   color: #fff;
 }
 
-.top_header_contact_info a:first-child {
+.email_group {
   border-right: 1px solid #fff;
   padding-right: 10px;
+  width: min-content;
 }
 
-.top_header_contact_info a:last-child {
-  padding-left: 9px;
+.phone_group {
+  padding-left: 8px;
 }
 
 .site_config {
@@ -301,6 +312,7 @@ export default {
   gap: 30px;
   justify-content: flex-end;
   align-items: center;
+  height: 100%;
 }
 
 .site_social_network ul {
@@ -663,13 +675,24 @@ export default {
     flex-direction: column;
   }
 
-  .top_header_contact_info a:first-child {
+  .email_group {
     border-right: unset;
     padding-right: unset;
   }
 
-  .top_header_contact_info a:last-child {
+  .phone_group {
     padding-left: unset;
   }
+
+  .phone_group a:first-child::after {
+    content: "&";
+    margin-left: 7px;
+    margin-right: 1px;
+  }
+
+  .number_separator {
+    display: none;
+  }
+
 }
 </style>

@@ -13,7 +13,7 @@
           <span>{{ $t('phone') }}</span> <br>
           <a :href="`tel:` + settingAll.contact[0].phone">{{ settingAll.contact[0].phone }}</a>
           <br>
-          <a :href="`tel:` + settingAll.contact[0].phone">{{ settingAll.contact[0].phone_2 }}</a>
+          <a :href="`tel:` + settingAll.contact[0].phone_2">{{ settingAll.contact[0].phone_2 }}</a>
         </div>
       </li>
 
@@ -35,9 +35,9 @@
 
         <div class="content_text">
           <span>{{ $t('email') }}</span> <br>
-          <a href="mailto:hello@era.az">{{ settingAll.contact[0].email }}</a>
+          <a :href="`mailto:` + settingAll.contact[0].email">{{ settingAll.contact[0].email }}</a>
           <br>
-          <a href="mailto:hello@era.az">{{ settingAll.contact[0].email_2 }}</a>
+          <a :href="`mailto:` + settingAll.contact[0].email_2">{{ settingAll.contact[0].email_2 }}</a>
         </div>
       </li>
     </ul>

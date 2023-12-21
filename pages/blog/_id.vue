@@ -13,7 +13,7 @@
               <div class="slider">
                 <swiper :options="swiperOptions">
                   <swiper-slide v-for="(blog, index) in getBlogs.images" :key="index">
-                    <img :src="AddUrl + blog" alt="about_image">
+                    <div class="image_container" :style="{ 'background-image': 'url(' + AddUrl + blog + ')' }"></div>
                   </swiper-slide>
                   <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
@@ -172,11 +172,12 @@ export default {
   position: relative;
 }
 
-.blogs_inside_left .slider img {
+.blogs_inside_left .slider .image_container {
   height: 350px;
-  width: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .main_text .text h1 {
@@ -222,6 +223,12 @@ export default {
 
   .main_text text {
     margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blogs_inside_left .slider .image_container {
+    height: 300px;
   }
 }
 </style>

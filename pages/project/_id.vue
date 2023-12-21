@@ -15,7 +15,7 @@
               <div class="slider">
                 <swiper :options="swiperOptions">
                   <swiper-slide v-for="(slider, index) in getProjects.images" :key="index">
-                    <img :src="AddUrl + slider" alt="project_images">
+                    <div class="image_container" :style="{ 'background-image': 'url(' + AddUrl + slider + ')' }"></div>
                   </swiper-slide>
                   <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
@@ -183,11 +183,12 @@ export default {
 }
 
 
-.projects_inside_left .slider img {
-  height: 400px;
-  width: 100%;
+.projects_inside_left .slider .image_container {
+  height: 350px;
   border-radius: 10px;
-  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /*-----------------------------------OTHER PROJECTS------------------------------------------------------*/
@@ -240,6 +241,13 @@ export default {
 @media screen and (max-width: 992px) {
   .other_post_container {
     margin-top: 30px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .projects_inside_left .slider .image_container {
+    height: 300px;
   }
 }
 </style>

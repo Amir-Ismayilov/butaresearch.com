@@ -1,38 +1,21 @@
 <template>
   <!-- Services Inside -->
   <section class="services_inside">
-    <BreadCrumb
-      :BreadCrumbTitle="getServices.name"
-      :BreadCrumbBefore="LinkBefore"
-      :BreadCrumbAfter="getServices.name"
-    />
+    <BreadCrumb :BreadCrumbTitle="getServices.name" :BreadCrumbBefore="LinkBefore" :BreadCrumbAfter="getServices.name" />
 
     <div class="main_page_body">
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-8">
-            <div
-              class="slider"
-              style="position: relative"
-              v-if="getServices.images !== null"
-            >
+            <div class="slider" style="position: relative" v-if="getServices.images !== null">
               <swiper :options="swiperOptions">
-                <swiper-slide
-                  v-for="(service, index) in getServices.images"
-                  :key="index"
-                >
-                  <img :src="AddUrl + service" alt="service_images" />
+                <swiper-slide v-for="(service, index) in getServices.images" :key="index">
+                  <div class="image_container" :style="{ 'background-image': 'url(' + AddUrl + service + ')' }"></div>
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
               </swiper>
-              <div
-                class="swiper-button-next"
-                v-if="getServices.images.length > 1"
-              ></div>
-              <div
-                class="swiper-button-prev"
-                v-if="getServices.images.length > 1"
-              ></div>
+              <div class="swiper-button-next" v-if="getServices.images.length > 1"></div>
+              <div class="swiper-button-prev" v-if="getServices.images.length > 1"></div>
             </div>
 
             <div class="services_inside_main_text">
@@ -43,14 +26,7 @@
 
             <div class="services_inside_video">
               <div v-for="(videoItem, index) in getServices.video" :key="index">
-                <video
-                  :src="AddUrl + videoItem.download_link"
-                  title="Play"
-                  width="100%"
-                  loop
-                  autoplay
-                  controls
-                ></video>
+                <video :src="AddUrl + videoItem.download_link" title="Play" width="100%" loop autoplay controls></video>
               </div>
             </div>
 
@@ -68,31 +44,21 @@
             <div class="projects_inside_right">
               <div class="other_post_container">
                 <span>{{ $t("other_service") }}</span>
-                <article
-                  class="project_item"
-                  v-for="(service, index) in servicesAll"
-                  :key="index"
-                >
+                <article class="project_item" v-for="(service, index) in servicesAll" :key="index">
                   <div class="project_item_image_wrapper">
-                    <nuxt-link
-                      :to="
-                        `/${$i18n.locale != 'az' ? $i18n.locale : '/'}` +
-                        `/service/` +
-                        service.id
-                      "
-                    >
+                    <nuxt-link :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` +
+                      `/service/` +
+                      service.id
+                      ">
                       <img :src="service.image" :alt="service.name" />
                     </nuxt-link>
                   </div>
 
                   <div class="project_item_text_wrapper">
-                    <nuxt-link
-                      :to="
-                        `/${$i18n.locale != 'az' ? $i18n.locale : '/'}` +
-                        `/service/` +
-                        service.id
-                      "
-                    >
+                    <nuxt-link :to="`/${$i18n.locale != 'az' ? $i18n.locale : '/'}` +
+                      `/service/` +
+                      service.id
+                      ">
                       <p>{{ service.name }}</p>
                     </nuxt-link>
                   </div>
@@ -239,11 +205,12 @@ export default {
   margin-bottom: 40px;
 }
 
-.slider img {
-  height: 400px;
-  width: 100%;
+.slider .image_container {
+  height: 350px;
   border-radius: 10px;
-  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 video {
@@ -256,7 +223,7 @@ video {
   margin-bottom: 20px;
 }
 
-.other_post_container > span {
+.other_post_container>span {
   display: block;
   font-size: 20px;
   color: var(--light-mode-color-4);
@@ -317,11 +284,15 @@ video {
   .other_post_container {
     margin-top: 30px;
   }
-}
 
-@media screen and (max-width: 992px) {
   .contact_info {
     margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider .image_container {
+    height: 300px;
   }
 }
 </style>
