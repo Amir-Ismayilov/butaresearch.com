@@ -72,9 +72,6 @@ export default {
   },
   computed: {
     ...mapGetters({projectsAll: "module/project/getAllProjects"}),
-  },
-  mounted() {
-    console.log(this.projectsAll)
   }
 }
 </script>

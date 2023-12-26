@@ -7,7 +7,10 @@
             <h2>{{ $t('about_us') }}</h2>
             <p class="description">{{ aboutAll.title }}</p>
             <div v-html="aboutAll.description"></div>
-            <nuxt-link :to="localePath('about')" class="btn_more_text">{{$t("more_details")}}</nuxt-link>
+            <div class="btn_more_detail image-container">
+              <nuxt-link :to="localePath('about')" class="btn_more_text">{{$t("more_details")}}</nuxt-link>
+              <img class="image animated" :src="settingAll.contact[0].loader_logo" alt="main_logo">
+            </div>
           </div>
         </div>
 
@@ -32,7 +35,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      aboutAll: "module/about/getAllAbouts"
+      aboutAll: "module/about/getAllAbouts",
+      settingAll: "module/setting/getAllSettings"
     }),
   },
 }
@@ -46,11 +50,25 @@ export default {
   height: 100%;
 }
 
+.btn_more_detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn_more_detail img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
 .btn_more_text {
   font-size: 18px;
+  text-transform: capitalize;
   font-weight: bold;
   color: var(--light-mode-color-1);
 }
+
 
 .about_left h2 {
   color: var(--light-mode-color-1);
@@ -63,9 +81,20 @@ export default {
   font-size: 35px;
   font-weight: 600;
   line-height: 1.2;
+  margin-bottom: 10px;
 }
 
-.about_left div {
-  margin-top: 10px;
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.image.animated {
+  animation: moveUpDown 5s ease-in-out infinite;
 }
 </style>
