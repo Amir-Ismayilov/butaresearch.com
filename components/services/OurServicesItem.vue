@@ -33,7 +33,7 @@ export default {
   border: 1px solid #DDDDDD;
   box-shadow: 3px 4px 9px rgba(36, 36, 36, 0.15);
   transition: 0.5s;
-  min-height: 220px;
+  min-height: 230px;
   border-bottom: 3px solid var(--light-mode-color-1);
 }
 

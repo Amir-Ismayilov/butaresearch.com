@@ -7,7 +7,7 @@
 
     <div class="faq-answer" :class="{'open': open}">
       <hr>
-      {{ answer }}
+      <span v-html="answer"></span>
     </div>
   </div>
 </template>

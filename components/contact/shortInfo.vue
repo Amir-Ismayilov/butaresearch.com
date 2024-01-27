@@ -38,6 +38,8 @@
           <a :href="`mailto:` + settingAll.contact[0].email">{{ settingAll.contact[0].email }}</a>
           <br>
           <a :href="`mailto:` + settingAll.contact[0].email_2">{{ settingAll.contact[0].email_2 }}</a>
+          <br>
+          <a :href="`mailto:` + settingAll.contact[0].email_3">{{ settingAll.contact[0].email_3 }}</a>
         </div>
       </li>
     </ul>

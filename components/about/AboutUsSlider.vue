@@ -24,7 +24,7 @@ export default {
           type: 'bullets',
         },
         autoplay: {
-          delay: 3000,
+          delay: 10000,
         },
         breakpoints: {
           640: {
